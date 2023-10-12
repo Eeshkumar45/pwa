@@ -1,9 +1,9 @@
 console.log("default")
 sendNotification("default")
-
+count = 0
 addEventListener("install", (event)=>{
     console.log("install");
-    sendNotification("install")
+    setInterval(()=>sendNotification("install : "+(++count)),3000);
 })
 
 addEventListener("activate", (event)=>{
