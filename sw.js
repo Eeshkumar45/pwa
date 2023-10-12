@@ -34,7 +34,10 @@ self.addEventListener("sync", (event) => {
 self.addEventListener('periodicsync', function(event) {
     console.log(event)
     if (event.registration.tag == "periodicSync") {
-        console.log("Periodic event occurred: ", event);
+        setInterval(
+            () => sendNotification("periodic sync : " + ++syncNotificationCount),
+            3000
+          )
     }
 });
 
